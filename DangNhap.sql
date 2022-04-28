@@ -18,7 +18,7 @@ values ('khoa123','khoa4431'),
 create table NhanVien(
 	maNV varchar(100) not null primary key,
 	tenNV varchar(100) not null,
-	ngaysinh Date not null,
+	ngaysinh varchar(50) not null,
 	gioitinh varchar(3) not null,
 	loaiNV varchar(100) not null,
 	diachi varchar(100) not null,
@@ -27,10 +27,11 @@ create table NhanVien(
 )
 go
 
+
 insert into NhanVien(maNV,tenNV,ngaysinh,gioitinh,loaiNV,diachi,SDT,makhauNV)
-values ('205131','Hoang Thi Phi','2002/10/2','nu','Nhan Vien thuong','k81 ngo diem','0968845331','chubemocoi'),
-	   ('205123','Thai Thi nhi','1998/4/8','nu','Nhan Vien thuong','k44 hoang dieu','0899431732','chubehienlanh'),
-	   ('205177','Tran Hung Dung','1995/9/13','nam','Nhan Vien quan ly ve','45 ngo dinh diem','0981445678','chubengungo')
+values ('205131','Hoang Thi Phi','2/10/2002','nu','Nhan Vien thuong','k81 ngo diem','0968845331','chubemocoi'),
+	   ('205123','Thai Thi nhi','8/4/1998','nu','Nhan Vien thuong','k44 hoang dieu','0899431732','chubehienlanh'),
+	   ('205177','Tran Hung Dung','13/9/1995','nam','Nhan Vien quan ly ve','45 ngo dinh diem','0981445678','chubengungo')
 go
 
 create table QuanLyVe_va_Xe(
@@ -39,11 +40,11 @@ create table QuanLyVe_va_Xe(
 	loaixe varchar(100) null,
 	tenxe varchar(100) null,
 	mauxe varchar(100) null,
-	ngayraben Date not null,
-	nayvaoben Date not null
+	ngayraben varchar(50) not null,
+	nayvaoben varchar(50) not null
 )
 go
 
 insert into QuanLyVe_va_Xe
-values ('Ck101','K2309','Xe may','Honda','Den','2022/3/10','2022/5/4'),
-	   ('Ck123','K2311','Xe oto',null,null,'2022/3/10','2022/5/4')
+values ('Ck101','K2309','Xe may','Honda','Den','10/3/2002','2022/5/4'),
+	   ('Ck123','K2311','Xe oto',null,null,'11/9/2003','2022/5/4')
