@@ -31,5 +31,19 @@ insert into NhanVien(maNV,tenNV,ngaysinh,gioitinh,loaiNV,diachi,SDT,makhauNV)
 values ('205131','Hoang Thi Phi','2002/10/2','nu','Nhan Vien thuong','k81 ngo diem','0968845331','chubemocoi'),
 	   ('205123','Thai Thi nhi','1998/4/8','nu','Nhan Vien thuong','k44 hoang dieu','0899431732','chubehienlanh'),
 	   ('205177','Tran Hung Dung','1995/9/13','nam','Nhan Vien quan ly ve','45 ngo dinh diem','0981445678','chubengungo')
+go
 
-select * from NhanVien where tenNV like '%Thi%'
+create table QuanLyVe_va_Xe(
+	bienso varchar(100) not null primary key,
+	masove varchar(100) not null,
+	loaixe varchar(100) null,
+	tenxe varchar(100) null,
+	mauxe varchar(100) null,
+	ngayraben Date not null,
+	nayvaoben Date not null
+)
+go
+
+insert into QuanLyVe_va_Xe
+values ('Ck101','K2309','Xe may','Honda','Den','2022/3/10','2022/5/4'),
+	   ('Ck123','K2311','Xe oto',null,null,'2022/3/10','2022/5/4')
