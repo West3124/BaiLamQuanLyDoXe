@@ -103,7 +103,6 @@ public class MainForm extends javax.swing.JFrame {
     
     public MainForm() {
         initComponents();
-        GetNhanVienTable();
     }
 
     /**
@@ -136,7 +135,6 @@ public class MainForm extends javax.swing.JFrame {
         jLabel73 = new javax.swing.JLabel();
         txtGioiTinh = new javax.swing.JTextField();
         jLabel74 = new javax.swing.JLabel();
-        txtLoaiNV = new javax.swing.JTextField();
         txtDiaChi = new javax.swing.JTextField();
         jLabel75 = new javax.swing.JLabel();
         txtSDT = new javax.swing.JTextField();
@@ -148,8 +146,10 @@ public class MainForm extends javax.swing.JFrame {
         txtTimtheomaNV_17 = new javax.swing.JTextField();
         btnTimtheoma_17 = new javax.swing.JButton();
         btnThem_17 = new javax.swing.JButton();
-        btnXoa_17 = new javax.swing.JButton();
+        btnNV_Xoa_17 = new javax.swing.JButton();
         jButton45 = new javax.swing.JButton();
+        btnHienDS = new javax.swing.JButton();
+        txtLoaiNV = new javax.swing.JTextField();
         QuanLy = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jButton13 = new javax.swing.JButton();
@@ -158,31 +158,32 @@ public class MainForm extends javax.swing.JFrame {
         QuanLyP = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         jLabel100 = new javax.swing.JLabel();
-        jTextField82 = new javax.swing.JTextField();
+        txtBienSo = new javax.swing.JTextField();
         jLabel101 = new javax.swing.JLabel();
-        jTextField83 = new javax.swing.JTextField();
+        txtMaSoVe = new javax.swing.JTextField();
         jLabel102 = new javax.swing.JLabel();
-        jTextField84 = new javax.swing.JTextField();
+        txtLoaiXe = new javax.swing.JTextField();
         jLabel103 = new javax.swing.JLabel();
-        jTextField85 = new javax.swing.JTextField();
+        txtTenXe = new javax.swing.JTextField();
         jLabel104 = new javax.swing.JLabel();
-        jTextField86 = new javax.swing.JTextField();
-        jTextField87 = new javax.swing.JTextField();
+        txtMauXe = new javax.swing.JTextField();
+        txtNgayRaBen = new javax.swing.JTextField();
         jLabel105 = new javax.swing.JLabel();
-        jTextField88 = new javax.swing.JTextField();
+        txtNgayVaoBen = new javax.swing.JTextField();
         jLabel106 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
         TableBaiDoXe = new javax.swing.JTable();
-        jTextField90 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
-        jButton47 = new javax.swing.JButton();
+        txtTKtheoVe = new javax.swing.JTextField();
+        btnTktheoVe = new javax.swing.JButton();
+        btnve_xe_Xoa = new javax.swing.JButton();
         jButton48 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField91 = new javax.swing.JTextField();
-        jButton19 = new javax.swing.JButton();
+        txtTktheoBien = new javax.swing.JTextField();
+        btnTKtheoBien = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btnHienDS2 = new javax.swing.JButton();
         jPanel49 = new javax.swing.JPanel();
         jScrollPane14 = new javax.swing.JScrollPane();
         jTable14 = new javax.swing.JTable();
@@ -440,14 +441,21 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
-        btnXoa_17.setText("Xóa");
-        btnXoa_17.addActionListener(new java.awt.event.ActionListener() {
+        btnNV_Xoa_17.setText("Xóa");
+        btnNV_Xoa_17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXoa_17ActionPerformed(evt);
+                btnNV_Xoa_17ActionPerformed(evt);
             }
         });
 
         jButton45.setText("Thay Đổi thông tin");
+
+        btnHienDS.setText("Hiện Danh Sách");
+        btnHienDS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHienDSActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel43Layout = new javax.swing.GroupLayout(jPanel43);
         jPanel43.setLayout(jPanel43Layout);
@@ -459,11 +467,13 @@ public class MainForm extends javax.swing.JFrame {
                 .addComponent(txtTimtheomaNV_17, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnTimtheoma_17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
+                .addGap(44, 44, 44)
                 .addComponent(btnThem_17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnXoa_17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addComponent(btnNV_Xoa_17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(btnHienDS)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton45)
                 .addGap(34, 34, 34))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel43Layout.createSequentialGroup()
@@ -486,27 +496,33 @@ public class MainForm extends javax.swing.JFrame {
                             .addComponent(txtTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel74)
-                    .addComponent(jLabel75)
-                    .addComponent(jLabel76)
-                    .addComponent(jLabel77))
-                .addGap(18, 18, 18)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel43Layout.createSequentialGroup()
+                        .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel75)
+                            .addComponent(jLabel76)
+                            .addComponent(jLabel77))
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel43Layout.createSequentialGroup()
+                        .addComponent(jLabel74)
+                        .addGap(18, 18, 18)))
                 .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtLoaiNV, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                    .addComponent(txtDiaChi)
+                    .addComponent(txtDiaChi, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                     .addComponent(txtSDT)
-                    .addComponent(txtMatKhau))
+                    .addComponent(txtMatKhau)
+                    .addComponent(txtLoaiNV, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
                 .addGap(90, 90, 90))
         );
         jPanel43Layout.setVerticalGroup(
             jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel43Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel70)
-                    .addComponent(jLabel74)
-                    .addComponent(txtLoaiNV, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel74)
+                        .addComponent(txtLoaiNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel70)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -527,13 +543,14 @@ public class MainForm extends javax.swing.JFrame {
                     .addComponent(txtGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel77)
                     .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTimtheomaNV_17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTimtheoma_17)
                     .addComponent(btnThem_17)
-                    .addComponent(btnXoa_17)
-                    .addComponent(jButton45))
+                    .addComponent(btnNV_Xoa_17)
+                    .addComponent(jButton45)
+                    .addComponent(btnHienDS))
                 .addGap(1, 1, 1)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -630,14 +647,24 @@ public class MainForm extends javax.swing.JFrame {
                 "Biển Số", "Mã Số Vé", "Loại Xe", "tên Xe", "Màu Xe", "Giờ Ra bến", "Ngày Vào Bến"
             }
         ));
+        TableBaiDoXe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableBaiDoXeMouseClicked(evt);
+            }
+        });
         jScrollPane10.setViewportView(TableBaiDoXe);
 
-        jButton8.setText("Tìm Kiếm");
-
-        jButton47.setText("Xóa");
-        jButton47.addActionListener(new java.awt.event.ActionListener() {
+        btnTktheoVe.setText("Tìm Kiếm");
+        btnTktheoVe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton47ActionPerformed(evt);
+                btnTktheoVeActionPerformed(evt);
+            }
+        });
+
+        btnve_xe_Xoa.setText("Xóa");
+        btnve_xe_Xoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnve_xe_XoaActionPerformed(evt);
             }
         });
 
@@ -649,9 +676,21 @@ public class MainForm extends javax.swing.JFrame {
 
         jLabel1.setText("Tìm Kiếm Theo Vé");
 
-        jButton19.setText("Tìm Kiếm");
+        btnTKtheoBien.setText("Tìm Kiếm");
+        btnTKtheoBien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTKtheoBienActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Tìm Kiếm Theo Biển");
+
+        btnHienDS2.setText("Hiện Danh Sách");
+        btnHienDS2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHienDS2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
         jPanel44.setLayout(jPanel44Layout);
@@ -659,35 +698,42 @@ public class MainForm extends javax.swing.JFrame {
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane10)
             .addGroup(jPanel44Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel44Layout.createSequentialGroup()
-                            .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel102)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel44Layout.createSequentialGroup()
-                                    .addComponent(jLabel103)
-                                    .addGap(1, 1, 1)))
-                            .addGap(28, 28, 28)
-                            .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField84, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField85, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel44Layout.createSequentialGroup()
-                                .addComponent(jLabel100)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField82, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel44Layout.createSequentialGroup()
-                                .addComponent(jLabel101)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField83, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel44Layout.createSequentialGroup()
-                        .addComponent(jTextField90, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)))
                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel44Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel44Layout.createSequentialGroup()
+                                    .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jLabel102)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel44Layout.createSequentialGroup()
+                                            .addComponent(jLabel103)
+                                            .addGap(1, 1, 1)))
+                                    .addGap(28, 28, 28)
+                                    .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtLoaiXe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtTenXe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel44Layout.createSequentialGroup()
+                                        .addComponent(jLabel100)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtBienSo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel44Layout.createSequentialGroup()
+                                        .addComponent(jLabel101)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtMaSoVe, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel44Layout.createSequentialGroup()
+                                .addComponent(txtTKtheoVe, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnTktheoVe)))
                         .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel44Layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(txtTktheoBien, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnTKtheoBien)
+                                .addGap(22, 22, 22)
+                                .addComponent(btnve_xe_Xoa))
                             .addGroup(jPanel44Layout.createSequentialGroup()
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -696,31 +742,24 @@ public class MainForm extends javax.swing.JFrame {
                                     .addComponent(jLabel106))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField88, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField87, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField86, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtNgayVaoBen, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNgayRaBen, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMauXe, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel44Layout.createSequentialGroup()
                                 .addGap(52, 52, 52)
                                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel2)
                                     .addComponent(jButton17))
                                 .addGap(66, 66, 66)
-                                .addComponent(jButton18)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jButton18))))
                     .addGroup(jPanel44Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jTextField91, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton19)
-                        .addGap(22, 22, 22)
-                        .addComponent(jButton47)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton48)
-                        .addContainerGap())))
-            .addGroup(jPanel44Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHienDS2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -728,27 +767,28 @@ public class MainForm extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel100)
-                    .addComponent(jTextField82, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBienSo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel104)
-                    .addComponent(jTextField86, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMauXe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel101)
-                    .addComponent(jTextField83, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMaSoVe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel105)
-                    .addComponent(jTextField87, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNgayRaBen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel44Layout.createSequentialGroup()
                         .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField84, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLoaiXe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel106)
-                            .addComponent(jTextField88, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNgayVaoBen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField85, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTenXe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton17)
-                            .addComponent(jButton18)))
+                            .addComponent(jButton18)
+                            .addComponent(btnHienDS2)))
                     .addGroup(jPanel44Layout.createSequentialGroup()
                         .addComponent(jLabel102)
                         .addGap(18, 18, 18)
@@ -760,13 +800,13 @@ public class MainForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField91, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton19)
-                        .addComponent(jButton47)
+                        .addComponent(txtTktheoBien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnTKtheoBien)
+                        .addComponent(btnve_xe_Xoa)
                         .addComponent(jButton48))
                     .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField90, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton8)))
+                        .addComponent(txtTKtheoVe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnTktheoVe)))
                 .addGap(1, 1, 1)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -1696,7 +1736,6 @@ public class MainForm extends javax.swing.JFrame {
     private void btnQuanLyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuanLyActionPerformed
         // TODO add your handling code here:
         MainPLayoutChange(2);
-        GetVevaXeTable();
     }//GEN-LAST:event_btnQuanLyActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1718,9 +1757,26 @@ public class MainForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton32ActionPerformed
 
-    private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
+    private void btnve_xe_XoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnve_xe_XoaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton47ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) TableBaiDoXe.getModel();
+        int selectedRowIndex = TableBaiDoXe.getSelectedRow();
+        try {
+            // TODO add your handling code here:
+            Class.forName(driver);
+            conn = DriverManager.getConnection(url);
+            String sql = "delete from QuanLyVe_va_Xe where bienso = ?";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1,model.getValueAt(selectedRowIndex, 0).toString());
+            pstm.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Ban da xoa thanh cong");
+            GetVevaXeTable();
+        } catch (ClassNotFoundException ex){
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnve_xe_XoaActionPerformed
 
     private void jButton63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton63ActionPerformed
         // TODO add your handling code here:
@@ -1769,7 +1825,7 @@ public class MainForm extends javax.swing.JFrame {
             while(rs.next()){
                 String maNV = rs.getString("maNV");
                 String tenNV = rs.getString("tenNV");
-                String ngaysinh = String.valueOf(rs.getDate("ngaysinh"));
+                String ngaysinh = rs.getString("ngaysinh");
                 String gioitinh = rs.getString("gioitinh");
                 String loaiNV = rs.getString("loaiNV");
                 String diachi = rs.getString("diachi");
@@ -1836,7 +1892,7 @@ public class MainForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMaNVActionPerformed
 
-    private void btnXoa_17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoa_17ActionPerformed
+    private void btnNV_Xoa_17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNV_Xoa_17ActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) tableNhanVien_17.getModel();
         int selectedRowIndex = tableNhanVien_17.getSelectedRow();
@@ -1855,7 +1911,102 @@ public class MainForm extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnXoa_17ActionPerformed
+    }//GEN-LAST:event_btnNV_Xoa_17ActionPerformed
+
+    private void TableBaiDoXeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableBaiDoXeMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) TableBaiDoXe.getModel();
+        int selectedRowIndex = TableBaiDoXe.getSelectedRow();
+        txtBienSo.setText(model.getValueAt(selectedRowIndex, 0).toString());
+        txtMaSoVe.setText(model.getValueAt(selectedRowIndex, 1).toString());
+        txtLoaiXe.setText(model.getValueAt(selectedRowIndex, 2).toString());
+        txtTenXe.setText(model.getValueAt(selectedRowIndex, 3).toString());
+        txtMauXe.setText(model.getValueAt(selectedRowIndex, 4).toString());
+        txtNgayRaBen.setText(model.getValueAt(selectedRowIndex, 5).toString());
+        txtNgayVaoBen.setText(model.getValueAt(selectedRowIndex, 6).toString());
+    }//GEN-LAST:event_TableBaiDoXeMouseClicked
+
+    private void btnHienDSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHienDSActionPerformed
+        // TODO add your handling code here:
+        GetNhanVienTable();
+    }//GEN-LAST:event_btnHienDSActionPerformed
+
+    private void btnHienDS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHienDS2ActionPerformed
+        // TODO add your handling code here:
+        GetVevaXeTable();
+    }//GEN-LAST:event_btnHienDS2ActionPerformed
+
+    private void btnTktheoVeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTktheoVeActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            Class.forName(driver);
+            conn = DriverManager.getConnection(url);
+            String sql = "select * from QuanLyVe_va_Xe where masove=?";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1, txtTKtheoVe.getText());
+            rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                String Bienso = rs.getString("bienso");
+                String Masoxe = rs.getString("masove");
+                String Loaixe = rs.getString("loaixe");
+                String Tenxe = rs.getString("tenxe");
+                String Mauxe = rs.getString("mauxe");
+                String Ngayraben = rs.getString("ngayraben");
+                String Ngayveben = rs.getString("nayvaoben");
+                
+                String tbData[] = {Bienso,Masoxe,Loaixe,Tenxe,Mauxe,Ngayraben,Ngayveben};
+                
+                DefaultTableModel tblmodel = (DefaultTableModel) TableBaiDoXe.getModel();
+                int rowtoremove = TableBaiDoXe.getRowCount();
+                for (int i = rowtoremove - 1; i >= 0; i--){
+                    tblmodel.removeRow(i);
+                }
+                tblmodel.addRow(tbData);
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnTktheoVeActionPerformed
+
+    private void btnTKtheoBienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTKtheoBienActionPerformed
+        // TODO add your handling code here:
+         try {
+            // TODO add your handling code here:
+            Class.forName(driver);
+            conn = DriverManager.getConnection(url);
+            String sql = "select * from QuanLyVe_va_Xe where bienso=?";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1, txtTktheoBien.getText());
+            rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                String Bienso = rs.getString("bienso");
+                String Masoxe = rs.getString("masove");
+                String Loaixe = rs.getString("loaixe");
+                String Tenxe = rs.getString("tenxe");
+                String Mauxe = rs.getString("mauxe");
+                String Ngayraben = rs.getString("ngayraben");
+                String Ngayveben = rs.getString("nayvaoben");
+                
+                String tbData[] = {Bienso,Masoxe,Loaixe,Tenxe,Mauxe,Ngayraben,Ngayveben};
+                
+                DefaultTableModel tblmodel = (DefaultTableModel) TableBaiDoXe.getModel();
+                int rowtoremove = TableBaiDoXe.getRowCount();
+                for (int i = rowtoremove - 1; i >= 0; i--){
+                    tblmodel.removeRow(i);
+                }
+                tblmodel.addRow(tbData);
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnTKtheoBienActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1904,16 +2055,20 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel ThongKe;
     private javax.swing.JPanel ThongKeP;
     private javax.swing.JPanel TroGiup;
+    private javax.swing.JButton btnHienDS;
+    private javax.swing.JButton btnHienDS2;
+    private javax.swing.JButton btnNV_Xoa_17;
     private javax.swing.JButton btnQuanLy;
+    private javax.swing.JButton btnTKtheoBien;
     private javax.swing.JButton btnThem_17;
     private javax.swing.JButton btnTimtheoma_17;
-    private javax.swing.JButton btnXoa_17;
+    private javax.swing.JButton btnTktheoVe;
+    private javax.swing.JButton btnve_xe_Xoa;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
@@ -1924,7 +2079,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton45;
-    private javax.swing.JButton jButton47;
     private javax.swing.JButton jButton48;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton57;
@@ -1934,7 +2088,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton63;
     private javax.swing.JButton jButton76;
     private javax.swing.JButton jButton79;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton80;
     private javax.swing.JButton jButton81;
     private javax.swing.JButton jButton88;
@@ -2062,24 +2215,24 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField170;
     private javax.swing.JTextField jTextField171;
     private javax.swing.JTextField jTextField172;
-    private javax.swing.JTextField jTextField82;
-    private javax.swing.JTextField jTextField83;
-    private javax.swing.JTextField jTextField84;
-    private javax.swing.JTextField jTextField85;
-    private javax.swing.JTextField jTextField86;
-    private javax.swing.JTextField jTextField87;
-    private javax.swing.JTextField jTextField88;
-    private javax.swing.JTextField jTextField90;
-    private javax.swing.JTextField jTextField91;
     private javax.swing.JTable tableNhanVien_17;
+    private javax.swing.JTextField txtBienSo;
     private javax.swing.JTextField txtDiaChi;
     private javax.swing.JTextField txtGioiTinh;
     private javax.swing.JTextField txtLoaiNV;
+    private javax.swing.JTextField txtLoaiXe;
     private javax.swing.JTextField txtMaNV;
+    private javax.swing.JTextField txtMaSoVe;
     private javax.swing.JTextField txtMatKhau;
+    private javax.swing.JTextField txtMauXe;
+    private javax.swing.JTextField txtNgayRaBen;
     private javax.swing.JTextField txtNgaySinh;
+    private javax.swing.JTextField txtNgayVaoBen;
     private javax.swing.JTextField txtSDT;
+    private javax.swing.JTextField txtTKtheoVe;
     private javax.swing.JTextField txtTenNV;
+    private javax.swing.JTextField txtTenXe;
     private javax.swing.JTextField txtTimtheomaNV_17;
+    private javax.swing.JTextField txtTktheoBien;
     // End of variables declaration//GEN-END:variables
 }
