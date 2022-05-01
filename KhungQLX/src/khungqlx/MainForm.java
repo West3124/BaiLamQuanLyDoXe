@@ -147,7 +147,7 @@ public class MainForm extends javax.swing.JFrame {
         btnTimtheoma_17 = new javax.swing.JButton();
         btnThem_17 = new javax.swing.JButton();
         btnNV_Xoa_17 = new javax.swing.JButton();
-        jButton45 = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
         btnHienDS = new javax.swing.JButton();
         txtLoaiNV = new javax.swing.JTextField();
         QuanLy = new javax.swing.JPanel();
@@ -448,7 +448,12 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
-        jButton45.setText("Thay Đổi thông tin");
+        btnEdit.setText("Thay Đổi thông tin");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnHienDS.setText("Hiện Danh Sách");
         btnHienDS.addActionListener(new java.awt.event.ActionListener() {
@@ -474,7 +479,7 @@ public class MainForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(btnHienDS)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton45)
+                .addComponent(btnEdit)
                 .addGap(34, 34, 34))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel43Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
@@ -549,7 +554,7 @@ public class MainForm extends javax.swing.JFrame {
                     .addComponent(btnTimtheoma_17)
                     .addComponent(btnThem_17)
                     .addComponent(btnNV_Xoa_17)
-                    .addComponent(jButton45)
+                    .addComponent(btnEdit)
                     .addComponent(btnHienDS))
                 .addGap(1, 1, 1)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1839,7 +1844,7 @@ public class MainForm extends javax.swing.JFrame {
                 for (int i = rowtoremove - 1; i >= 0; i--){
                     tblmodel.removeRow(i);
                 }
-                tblmodel.addRow(tbData);
+                tblmodel.addRow(tbData); 
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
@@ -2008,6 +2013,31 @@ public class MainForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnTKtheoBienActionPerformed
 
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+         try {
+            Class.forName(driver);
+            conn = DriverManager.getConnection(url);
+            String sql = "update NhanVien set tenNV=? , ngaysinh=? , gioitinh=? , loaiNV=? , diachi=?"
+                    + ",SDT=? , makhauNV=? where maNV=?";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1, txtTenNV.getText());
+            pstm.setString(2, txtNgaySinh.getText());
+            pstm.setString(3, txtGioiTinh.getText());
+            pstm.setString(4, txtLoaiNV.getText());
+            pstm.setString(5, txtDiaChi.getText());
+            pstm.setString(6, txtSDT.getText());
+            pstm.setString(7, txtMatKhau.getText());
+            pstm.setString(8, txtMaNV.getText());
+            pstm.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Ban da thay doi thanh cong");
+            GetNhanVienTable();
+        }  catch (ClassNotFoundException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnEditActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2055,6 +2085,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel ThongKe;
     private javax.swing.JPanel ThongKeP;
     private javax.swing.JPanel TroGiup;
+    private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnHienDS;
     private javax.swing.JButton btnHienDS2;
     private javax.swing.JButton btnNV_Xoa_17;
@@ -2078,7 +2109,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton45;
     private javax.swing.JButton jButton48;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton57;

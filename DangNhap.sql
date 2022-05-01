@@ -7,7 +7,7 @@ go
 create table Account(
 	userName varchar(100) not null primary key,
 	pass varchar(100) not null
-)
+)	
 go
 
 insert into Account
